@@ -225,6 +225,10 @@ hr {
     letter-spacing: 1px;
 }
 
+ul {
+  text-align: left;
+}
+
 /* Individual Tab Styling */
 
 .et-hero-tab {
