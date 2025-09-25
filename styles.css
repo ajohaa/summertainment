@@ -1,0 +1,397 @@
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+}
+
+/* Figured out how to do this thanks to Stack Overflow. Still iffy */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-container iframe {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  /* Prevent interactions */
+}
+
+/* ---------------------- */
+/* OVERLAY TEXT           */
+/* ---------------------- */
+
+.overlay-text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  text-align: center;
+  padding: 0 2em;
+}
+
+.overlay-text h1 {
+  font-family: acier-bat-solid, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5rem;
+  font-size: min(6vw, 60px);
+}
+
+.overlay-text h3 {
+  font-family: p22-underground-sc, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.5rem;
+  font-size: 3vw;
+}
+
+.overlay-text h1,
+.overlay-text h3 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  padding: 0 3em;
+}
+
+/* Hero Navigation Text */
+
+.et-hero-tabs a {
+  font-family: "kigelia-lgc", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2vw;
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+
+/* Slide Headings */
+
+.et-slide h1 {
+  font-family: "delicato", sans-serif;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: 5vw;
+  margin-top: 6%; 
+  letter-spacing: 0.2rem;
+}
+
+.et-slide h3 {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  letter-spacing: 0.15rem;
+  opacity: 0.6;
+  margin: 0 10% 5% 10%;
+}
+
+/* ---------------------- */
+/* HERO TABS NAVIGATION - my Cambodia Project last year */
+/* ---------------------- */
+
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  z-index: 10;
+}
+
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* accordion styles */
+
+#accordion {
+  width: 100%;
+  max-width: 100%
+}
+
+#accordion .accordion-item {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#accordion .accordion-item:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    border: 1px dashed #6e8898;
+    position: absolute;
+    top: 25px;
+    left: 18px;
+}
+
+#accordion .accordion-item:last-child:before {
+    display: none;
+}
+
+/* Accordion Header */
+#accordion .accordion-header {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    position: relative;
+}
+
+/* Accordion Button */
+#accordion .accordion-button {
+    display: block;
+    padding: 10px 30px 10px 60px;
+    margin: 0;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #1d3557;
+    border-radius: 0;
+    position: relative;
+    text-align: left;
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Chevron icon before */
+#accordion .accordion-button::before,
+#accordion .accordion-button.collapsed::before {
+    content: "";
+    width: 40px;
+    height: 100%;
+    line-height: 40px;
+    background: #f19e66;
+    border: 1px solid #f19e66;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+
+#accordion .accordion-button.collapsed::before {
+    background: #fff;
+    border: 1px solid #6e8898;
+    color: #000;
+}
+
+/* Accordion Body */
+#accordion .accordion-body {
+    padding: 10px 30px 10px 30px;
+    margin-left: 40px;
+    background: #fff;
+    border-top: none;
+    font-size: 15px;
+    color: #6f6f6f;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+/* Individual Tab Styling */
+
+.et-hero-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #000;
+  letter-spacing: 0.15rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.et-hero-tab:hover {
+  color: white;
+  background: rgba(238, 171, 95, 0.8);
+}
+
+/* Tab Slider Animation */
+
+.et-hero-tab-slider {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background: #f19e66;
+  transition: left 0.3s ease;
+}
+
+/* ---------------------- */
+/* RESPONSIVE DESIGN      */
+/* ---------------------- */
+
+/* Large Screens */
+
+@media (min-width: 800px) {
+  .et-slide h1 {
+    font-size: 3rem;
+  }
+
+  .et-hero-tabs a,
+  .et-slide h3 {
+    font-size: 1rem;
+  }
+
+  .et-hero-tab {
+    font-size: 1rem;
+  }
+
+  .et-slide h3 {
+    margin: 0 7%;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+
+  .button-name {
+    font-size: 1rem !important;
+  }
+}
+
+/* Video aspect ratio control */
+
+@media (min-aspect-ratio: 16/9) {
+  .video-container iframe {
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-container iframe {
+    width: 177.78vh;
+  }
+}
+
+/* Small Screens */
+
+@media screen and (max-width: 700px) {
+  .video-container {
+    margin-top: 0%;
+  }
+}
+
+/* ---------------------- */
+/* BUTTON STYLES          */
+/* ---------------------- */
+
+.button-name {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border: none;
+  box-shadow:
+    rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+  padding: 0 16px;
+  margin-bottom: 2.2rem;
+  margin-top: 2.2rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+  user-select: none;
+  white-space: nowrap;
+  will-change: transform, box-shadow;
+  font-size: min(2.5vw, 18px);
+}
+
+/* Button States */
+
+.button-name:focus {
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+}
+
+.button-name:hover {
+  box-shadow:
+    rgba(45, 35, 66, 0.3) 0 4px 8px,
+    rgba(45, 35, 66, 0.2) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-name:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: -50px;
+  z-index: 99;
+  font-size: 18px;
+  display: none; /* Hidden by default */
+  opacity: 0; /* Start with full transparency for transition */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation effect */
+  border: none;
+  outline: none;
+  background-color: #f19e66;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #ffbb8e;
+}
+
+#myBtn.show {
+  right: 20px;
+  display: block;
+  opacity: 1; /* Full opacity when visible */
+  transform: translateX(0); /* Slide into place */
+}
