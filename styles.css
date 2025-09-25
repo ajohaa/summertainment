@@ -399,3 +399,12 @@ ul {
   opacity: 1; /* Full opacity when visible */
   transform: translateX(0); /* Slide into place */
 }
+
+.sources h3 {
+  text-align: left;
+}
+
+.hanging-indent {
+  padding-left: 30px;
+  text-indent: -60px;
+}
